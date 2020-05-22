@@ -1,13 +1,16 @@
 import React from 'react'
 import KA from 'KA'
-import './App.css'
 
 function App() {
   const { name, birthday } = KA.getUserProfile()
   return (
     <div className="App">
-      <h3>name: {name}</h3>
-      <h3>birthday: {birthday}</h3>
+      {KA && (
+        <div>
+          <h3 data-testid="name">name: {name}</h3>
+          <h3 data-testid="birthday">birthday: {birthday}</h3>
+        </div>
+      )}
     </div>
   )
 }

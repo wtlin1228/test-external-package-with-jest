@@ -1,3 +1,21 @@
+1. 在 `__mocks__` 裡面新增一個 `KA.js`
+
+2. 在 `jest.config.js` 裡面加入這段來讓 jest 去 Mock KA
+
+```JavaScript
+// jest.config.js
+module.exports = {
+  verbose: true,
+  moduleNameMapper: {
+    KA: '<rootDir>/__mocks__/KA',
+  },
+  // https://jestjs.io/docs/en/configuration#transformignorepatterns-arraystring
+  transformIgnorePatterns: ['node_modules/KA'],
+}
+```
+
+3. 執行 `yarn test` 測試看看
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
